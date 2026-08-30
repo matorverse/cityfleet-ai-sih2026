@@ -1,0 +1,27 @@
+# Render Blueprint — deploy both services from one repo.
+# Dashboard: New > Blueprint > connect this repository.
+services:
+  - type: web
+    name: cityfleet-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm run start -w backend
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: SIMULATION_TICK_MS
+        value: "1000"
+
+  - type: web
+    name: cityfleet-web
+    runtime: static
+    buildCommand: npm install && npm run build -w frontend
+    staticPublishPath: frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: cityfleet-api
+          envVarKey: RENDER_EXTERNAL_URL

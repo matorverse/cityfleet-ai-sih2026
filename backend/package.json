@@ -8,6 +8,17 @@
     "test": "tsx --test test/*.test.ts",
     "typecheck": "tsc --noEmit"
   },
-  "dependencies": { "@cityfleet/shared": "*", "cors": "^2.8.5", "express": "^5.1.0", "socket.io": "^4.8.1" },
-  "devDependencies": { "@types/cors": "^2.8.17", "@types/express": "^5.0.1", "@types/node": "^22.13.10", "tsx": "^4.19.3", "typescript": "^5.7.3" }
+  "dependencies": {
+    "@cityfleet/shared": "*",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "socket.io": "^4.8.1",
+    "tsx": "^4.19.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.10",
+    "typescript": "^5.7.3"
+  }
 }

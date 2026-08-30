@@ -23,6 +23,16 @@ python ai-service/main.py
 
 No model or database download is required for the MVP. Copy `.env.example` to `.env` if you need different ports or tick timing.
 
+## Deploy on Render
+
+The repo includes a [Render Blueprint](render.yaml) for a two-service deploy (API + static frontend).
+
+1. Render Dashboard → **New** → **Blueprint** → connect this GitHub repo.
+2. Apply the blueprint (`cityfleet-api` + `cityfleet-web`).
+3. Open the static site URL when both services are live.
+
+Full steps, manual setup, and troubleshooting: [docs/DEPLOY_RENDER.md](docs/DEPLOY_RENDER.md).
+
 ## Two-minute judge demo
 
 1. Open **Command center** and use **1 · Pothole**. A new unverified geotagged road issue appears.
